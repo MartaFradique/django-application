@@ -1,0 +1,15 @@
+{% extends 'main.html' %}
+{% block content %}
+<h1>HOME TEMPALTE</h1>
+
+<div>
+    <div>
+        <h2>Latest Posts</h2>
+        {% for rom in roms %}
+        <div>
+            <p>{{ rom.id }} -- <a href="{% url 'room' rom.id %}">{{ rom.name }}</a></p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}
