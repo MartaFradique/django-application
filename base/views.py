@@ -29,10 +29,10 @@ def home(request):
         Q(name__icontains = q)|
         Q(description__icontains = q)
         )
-    
-    print(rooms)
+    count = rooms.count()
+    print(count)
     topic = Topic.objects.all()
-    context = {'rooms': rooms, 'topic': topic}
+    context = {'rooms': rooms, 'topic': topic, 'room_count': count}
     return render(request, 'base/home.html', context)
 
 def room(request, pk):
